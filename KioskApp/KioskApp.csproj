@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3032E97-3F06-4C1F-9AED-32CC23842E4B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KioskApp</RootNamespace>
+    <AssemblyName>KioskApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Json.Net, Version=1.0.23.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Json.Net.1.0.23\lib\netstandard2.0\Json.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.1.3\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="common\FormManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common\FormManager.Designer.cs">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common\FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common\FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common\HisConstant.cs" />
+    <Compile Include="common\http\HttpRestTemplate.cs" />
+    <Compile Include="common\model\BaseParam.cs" />
+    <Compile Include="common\model\Response.cs" />
+    <Compile Include="common\utils\AppConfigUtil.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patient\FormConfirmPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="patient\FormConfirmPatient.Designer.cs">
+      <DependentUpon>FormConfirmPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patient\PatientService.cs" />
+    <Compile Include="patient\PatientVO.cs" />
+    <Compile Include="pay\BankDll.cs" />
+    <Compile Include="pay\FormCashSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormCashSave.Designer.cs">
+      <DependentUpon>FormCashSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormInputInHosId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormInputInHosId.Designer.cs">
+      <DependentUpon>FormInputInHosId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormInputMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormInputMoney.Designer.cs">
+      <DependentUpon>FormInputMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormNewCashSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormNewCashSave.Designer.cs">
+      <DependentUpon>FormNewCashSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormNewInputMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormNewInputMoney.Designer.cs">
+      <DependentUpon>FormNewInputMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormNewPayChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormNewPayChoose.Designer.cs">
+      <DependentUpon>FormNewPayChoose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormNewQrCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormNewQrCode.Designer.cs">
+      <DependentUpon>FormNewQrCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormNewQueryResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormNewQueryResult.Designer.cs">
+      <DependentUpon>FormNewQueryResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormPayChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormPayChoose.Designer.cs">
+      <DependentUpon>FormPayChoose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormPayNewChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormPayNewChoose.Designer.cs">
+      <DependentUpon>FormPayNewChoose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormQrCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormQrCode.Designer.cs">
+      <DependentUpon>FormQrCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\FormQueryResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pay\FormQueryResult.Designer.cs">
+      <DependentUpon>FormQueryResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pay\model\BankDTO.cs" />
+    <Compile Include="pay\model\BankResult.cs" />
+    <Compile Include="pay\model\BankVO.cs" />
+    <Compile Include="pay\model\CashDTO.cs" />
+    <Compile Include="pay\model\CashVO.cs" />
+    <Compile Include="pay\model\PayParam.cs" />
+    <Compile Include="pay\model\PayResultVO.cs" />
+    <Compile Include="pay\model\TransactionData.cs" />
+    <Compile Include="pay\service\PayService.cs" />
+    <Compile Include="prestore\FormInputCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prestore\FormInputCard.Designer.cs">
+      <DependentUpon>FormInputCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prestore\FormNewInputCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prestore\FormNewInputCard.Designer.cs">
+      <DependentUpon>FormNewInputCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prestore\model\Patient.cs" />
+    <Compile Include="prestore\service\PrestoreService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register\FormInputPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register\FormInputPhone.Designer.cs">
+      <DependentUpon>FormInputPhone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="register\FormMessageIdCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register\FormMessageIdCard.Designer.cs">
+      <DependentUpon>FormMessageIdCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="register\FormMessageIdCardInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register\FormMessageIdCardInfo.Designer.cs">
+      <DependentUpon>FormMessageIdCardInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="register\FormPutIdCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register\FormPutIdCard.Designer.cs">
+      <DependentUpon>FormPutIdCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="register\model\RegisterParam.cs" />
+    <Compile Include="register\model\RegisterVO.cs" />
+    <Compile Include="register\service\RegisterService.cs" />
+    <Compile Include="sdk\HardWareService.cs" />
+    <EmbeddedResource Include="common\FormManager.resx">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="common\FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="patient\FormConfirmPatient.resx">
+      <DependentUpon>FormConfirmPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormCashSave.resx">
+      <DependentUpon>FormCashSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormInputInHosId.resx">
+      <DependentUpon>FormInputInHosId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormInputMoney.resx">
+      <DependentUpon>FormInputMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormNewCashSave.resx">
+      <DependentUpon>FormNewCashSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormNewInputMoney.resx">
+      <DependentUpon>FormNewInputMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormNewPayChoose.resx">
+      <DependentUpon>FormNewPayChoose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormNewQrCode.resx">
+      <DependentUpon>FormNewQrCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormNewQueryResult.resx">
+      <DependentUpon>FormNewQueryResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormPayChoose.resx">
+      <DependentUpon>FormPayChoose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormPayNewChoose.resx">
+      <DependentUpon>FormPayNewChoose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormQrCode.resx">
+      <DependentUpon>FormQrCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pay\FormQueryResult.resx">
+      <DependentUpon>FormQueryResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prestore\FormInputCard.resx">
+      <DependentUpon>FormInputCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prestore\FormNewInputCard.resx">
+      <DependentUpon>FormNewInputCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="register\FormInputPhone.resx">
+      <DependentUpon>FormInputPhone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="register\FormMessageIdCard.resx">
+      <DependentUpon>FormMessageIdCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="register\FormMessageIdCardInfo.resx">
+      <DependentUpon>FormMessageIdCardInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="register\FormPutIdCard.resx">
+      <DependentUpon>FormPutIdCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\baseline_bluetooth_black_24dp.png" />
+    <Content Include="Resources\baseline_build_black_24dp.png" />
+    <Content Include="Resources\baseline_favorite_border_black_24dp.png" />
+    <Content Include="Resources\baseline_fingerprint_black_24dp.png" />
+    <Content Include="Resources\baseline_thumb_up_black_24dp.png" />
+    <Content Include="Resources\head.png" />
+    <Content Include="Resources\nan.png" />
+    <Content Include="Resources\nv.png" />
+    <Content Include="Resources\住院预交金.png" />
+    <Content Include="Resources\查询.png" />
+    <Content Include="Resources\现金预存指示图.png" />
+    <Content Include="Resources\电子健康卡.png" />
+    <Content Include="Resources\缴费.png" />
+    <Content Include="Resources\退卡.png" />
+    <Content Include="Resources\门诊充值.png" />
+    <Content Include="Resources\门诊办卡.png" />
+    <Content Include="Resources\门诊预存.png" />
+    <Content Include="Resources\背景2.png" />
+    <Content Include="Resources\minus.png" />
+    <Content Include="Resources\pay_微信.png" />
+    <Content Include="Resources\pay_支付宝.png" />
+    <Content Include="Resources\pay_银联支付.png" />
+    <Content Include="Resources\plus.png" />
+    <Content Include="Resources\p_现金.png" />
+    <Content Include="Resources\round_assessment_white_24dp.png" />
+    <Content Include="Resources\round_backup_white_24dp.png" />
+    <Content Include="Resources\round_bluetooth_white_24dp.png" />
+    <Content Include="Resources\round_bookmark_white_24dp.png" />
+    <Content Include="Resources\round_build_white_24dp.png" />
+    <Content Include="Resources\round_gps_fixed_white_24dp.png" />
+    <Content Include="Resources\round_http_white_24dp.png" />
+    <Content Include="Resources\round_report_problem_white_24dp.png" />
+    <Content Include="Resources\round_swap_vert_white_24dp.png" />
+    <Content Include="Resources\回删箭头.png" />
+    <Content Include="Resources\办卡.png" />
+    <Content Include="Resources\背景.png" />
+    <Content Include="Resources\身份证阅读区.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
