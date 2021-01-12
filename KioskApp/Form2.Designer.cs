@@ -100,6 +100,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(367, 248);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
