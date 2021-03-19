@@ -48,16 +48,17 @@
             // 
             // materialButton1
             // 
+            this.materialButton1.AutoSize = false;
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton1.Depth = 0;
             this.materialButton1.DrawShadows = true;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(189, 304);
+            this.materialButton1.Location = new System.Drawing.Point(125, 294);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(85, 36);
+            this.materialButton1.Size = new System.Drawing.Size(207, 58);
             this.materialButton1.TabIndex = 1;
             this.materialButton1.Text = "支付成功";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -92,7 +93,6 @@
             this.Load += new System.EventHandler(this.FormQrCode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

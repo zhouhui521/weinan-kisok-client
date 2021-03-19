@@ -279,6 +279,7 @@ namespace KioskApp
            
             printContent += "1、此凭据不能用作报销，\n\n仅做预交结算使用\n\n";
             printContent += "2、卡片押金5元，退卡时退还\n\n";
+            printContent += "时间："+DateTime.Now.ToString()+"\n\n";
             printDocument1.Print();
 
             string result = HardWareService.getValue("<invoke name=\"CARDSENDEROUTCARD\"><arguments></arguments></invoke>");
@@ -456,6 +457,7 @@ namespace KioskApp
             printContent += "姓名:" + patient.name + "\n\n";
             printContent += "充值金额:" + payParam.money + "\n\n";
             printContent += "充值流水号:" + formQueryResult.transData.data.merTradeNo + "\n";
+            printContent += "时间：" + DateTime.Now.ToString() + "\n\n";
             printDocument1.Print();
 
             
@@ -544,6 +546,7 @@ namespace KioskApp
           
             printContent += "1、此凭据不能用作报销，\n\n仅做预交结算使用\n\n";
             printContent += "2、卡片押金5元，退卡时退还\n\n";
+            printContent += "时间：" + DateTime.Now.ToString() + "\n\n";
             printDocument1.Print();
 
             
@@ -605,6 +608,7 @@ namespace KioskApp
          
             printContent += "1、此凭据不能用作报销，\n\n仅做预交结算使用\n\n";
             printContent += "2、卡片押金5元，退卡时退还\n\n";
+            printContent += "时间：" + DateTime.Now.ToString() + "\n\n";
             printDocument1.Print();
 
             
@@ -660,6 +664,7 @@ namespace KioskApp
             printContent += "充值金额:" + cashDTO.money + "\n\n";
             printContent += "充值流水号:" + response.data.hisSerialNumber + "\n\n";
             printContent += "余额:" + response.data.balance + "\n\n";
+            printContent += "时间：" + DateTime.Now.ToString() + "\n\n";
             printDocument1.Print();
 
             HardWareService.outCard();
@@ -1061,6 +1066,7 @@ namespace KioskApp
             printContent += "充值金额:" + inMoney + "\n\n";
             printContent += "充值流水号:" + response.data.hisSerialNumber + "\n\n";
             printContent += "余额:" + response.data.balance + "\n\n";
+            printContent += "时间：" + DateTime.Now.ToString() + "\n\n";
             printDocument1.Print();
 
             HardWareService.outCard();
